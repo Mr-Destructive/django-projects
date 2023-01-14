@@ -1,0 +1,8 @@
+{% extends 'djnotes.html' %}
+{% block content %}
+    <ul>
+    {% for note in book %}
+    <li><a href="{% url 'djnotes:noteview' note.id %}">{{ note.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

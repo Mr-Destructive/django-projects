@@ -1,0 +1,13 @@
+{% extends 'djnotes.html' %}
+{% block content %}
+    <h2>Welcome to DJ Notes</h2>
+    <ul>
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'djnotes:note' %}">My Notes</a></li>
+        <li><a href="{% url 'djnotes:notebook' %}">My Books</a></li>
+    {% else %}
+    <li><a href="{% url 'djnotes:register' %}">Register</a></li>
+    <li><a href="{% url 'djnotes:login' %}">Login</a></li>
+    {% endif %}
+    </ul>
+{% endblock %}
