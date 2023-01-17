@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %} 
+	<meta charset="utf-8" />
+	<title>WORLD ATLAS</title>
+	<link rel="icon" href="https://github.com/Mr-Destructive/WorldAtlas/blob/master/webpage/img/W.png?raw=true">
+	
+
+</head>
+<body>
+    <h1><a href="">WORLD ATLAS</a></h1>
+	<div id="content">
+	<h2>The geographical game.</h2>
+	<h3 id="an-api-for-world-atlas-the-geographical-game-">An API for World Atlas - the geographical game.</h3>
+	<p>You can check out and play the <a href="https://mr-destructive.github.io/WorldAtlas">World Atlas game</a>. </p>
+	<p>Currently it is implemented in without using this API, there are tons of Js  hard coded arrays for that. That would be easy to exploit the game in a real-world scenario.</p>
+	<p>Soon, this API will be integrated into the app as well.</p>
+	<h4> You can interact with the API from <a href="https://djangonaut.pythonanywhere.com/world-atlas/api/">worls-atlas-api</a> as the base entry point url.
+	</div>
+	<h2 id="api-endpoints">API Endpoints</h2>
+	<div id="api">	
+		<ol>
+			<li><p><strong><code>&#39;/places/exists/&lt;place&gt;&#39;</code></strong> -&gt; for validating the place. </p>
+				<ul>
+				<li>Returns <code>true</code> if the place exists in the database.</li>
+				<li><p>Else returns <code>false</code> if it doesn&#39;t.</p>
+				<p><img src="https://i.ibb.co/qgM6Tt7/image.png" alt=""></p>
+				<p><img src="https://i.ibb.co/DGbVNcd/image.png" alt=""></p>
+				</li>
+				</ul>
+			</li>
+			<li><p><strong><code>&#39;/places/get/&lt;letter&gt;&#39;</code></strong> -&gt; for obtaining an random place with given letter.</p>
+				<ul>
+				<li><p>Returns an place, beginning with the alphabet <code>letter</code></p>
+				<p><img src="https://i.ibb.co/93KPT46/image.png" alt=""></p>
+				<p><img src="https://i.ibb.co/QrjQyvt/image.png" alt=""></p>
+				</li>
+				</ul>
+			</li>
+			<li><p><strong><code>&#39;/places/list/&lt;letter&gt;&#39;</code></strong> -&gt; Obtains a list of all places with given letter.</p>
+				<ul>
+			<li><p>Returns a list of places, beginning with the alphabet <code>letter</code></p>
+				<p><img src="https://i.ibb.co/JdL2hxs/image.png" alt=""></p>
+				</li>
+				</ul>
+			</li>
+		</ul>
+			</li>
+		</ol>
+	</div>
+</body>
+</html>
