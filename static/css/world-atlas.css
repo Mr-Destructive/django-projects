@@ -1,0 +1,166 @@
+body{
+	background-color:#000077;
+	text-align:center;
+}
+a{
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:700;
+}
+h1, h2 {
+	text-align:center;
+	color:#00ffff;
+}
+
+nav{ 
+	display:block;
+	justify-content:center;
+}
+ul{
+	list-style-type:none;
+}
+.navlinks{
+	display:block;
+	list-style-type:none;
+	padding:7px;
+	height:40px;
+	width:20%;
+	padding-left:0pt;
+	font-size:250%;
+	float:left;
+	text-align:center;
+	overflow:hidden;
+	background-color:#00dd00;
+	position:relative;
+	left:27%;
+} 
+nav li:hover{
+	background-color:#0014ff;
+	color:#00dd00;
+}
+a:hover{
+	background-color:#0014ff;
+	color:white;
+}
+#logo{
+	height:200px;
+	width:200px;
+	position:absolute;
+	left:0%;
+	top:5%;
+}
+.content{
+	color:#f4ffff;
+	margin:10%;
+	font-size:200%;
+	font-weight:600;
+}
+
+#start{
+    position:absolute;
+    left:40%;
+    top:45%;
+    font-size:40px;
+    padding:15px;
+}
+#place{
+	position:absolute;
+	top:90%;
+	left:20%;
+	height:8%;
+	width:40%;
+	font-size:35px;
+}
+#submit{
+	position:absolute;
+	top:90%;
+	left:63%;
+	height:8%;
+	width:15%;
+	font-size:35px;
+    padding:5px;
+    text-align:center;
+}
+
+#info{
+	position:absolute;
+	top:70%;
+	left:20%;
+	font-size:30px;
+	color:#00ffff;
+    width:40%;
+}
+
+.points
+{
+    visibility:visible;
+    position:absolute;
+    top:75%;
+    left:63%;
+    background-color:#0014ff;
+    color:white;
+    font-size:35px;
+    padding:15px;
+}
+
+#tab
+{
+    position:absolute;
+    top:40%;
+    left:25%;
+    color:#00ff00;
+	overflow-y:scroll;
+	height:25%;
+    display:block;
+
+}
+#tab >tbody >tr >td
+{
+    padding-left:5px;
+    font-size:50px;
+    text-align:left;
+    width:auto; 
+    border:2px solid #ffffff;
+}
+
+#tab::-webkit-scrollbar{
+	display:none;
+}
+
+#tab{
+	-ms-overflow-style:none;
+	scrollbar-width:none;
+}
+
+.alert {
+    visibility:hidden;
+    padding: 5px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    position:absolute;
+    top:30%;
+    left:15%;
+    width:70%;
+    font-size:40px;
+    font-weight:600;
+}
+
+.closebtn {
+    visibility:hidden;
+    position:relative;
+    top:32.5%;
+    left:80%;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    position:absolute;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+

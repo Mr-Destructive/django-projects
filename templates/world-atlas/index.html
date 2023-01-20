@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>WORLD ATLAS</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static "css/world-atlas.css" %}" >
+	<link rel="icon" href="{% static "images/W.png" %}">
+	
+</head>
+<body>
+        <h1>WORLD ATLAS</h1>
+	<h2>The geographical game.</h2>
+	<nav>
+	<ul>
+        <li class="navlinks" id="home"><a href="{% url 'world-atlas' %}" >Home</a></li>
+		<li class="navlinks" id="play"><a href="{% url 'world-atlas-play' %}" >Play</a></li>
+	</ul>
+	</nav>
+	{% block body %}
+		<div class="content">
+<h2 id="whatisworldatlas">What is World Atlas?</h2>
+
+<p>World Atlas is a geographical word game. You have to enter names of the places in the world according to some rules. It focuses on how much geographically strong you are. </p>
+
+<h2 id="howtoplayworldatlas">How to play World Atlas?</h2>
+
+<p>The player who wins the coin flip/toss(or anything you can call) gets the chance to enter(tell) the place first.
+After the player A has entered the place the  player B has to then enter   the place whose first letter begins with the last letter of player A's place.
+Lets say player A said "New York" then the Player B has to say a place beginning from "K" ,after this same applies for Player A and so on.
+This continues for the next player as well if it is a game of more than two players.
+Anyone who cannot think of a valid and non-repitative place,loses.
+There might some things to be discussed before the game starts like how much lives a player has ,the standard is 1 but it can be modified as per players preferance.</p>
+
+<h2 id="somestandardrulesinworldatlas">Some Standard Rules in World Atlas</h2>
+
+<ol>
+<li>The place should be big enough not a  local area or residential place.</li>
+
+<li>The place entered should not have been taken(entered) previously by any player.</li>
+</ol>
+
+<h2 id="example">Example</h2>
+
+<p>2-Player Game:<br />
+Player A: India<br />
+Player B: Athens<br />
+Player A: Switzerland<br />
+Player B: Delhi<br />
+Player A: Italy<br />
+Player B: .....<br />
+Player A wins<br /></p>
+<h3 id="5playergamebr">5-Player Game:<br /></h3>
+<p>Player-A: Sweden<br />
+Player-B: Nigeria<br />
+Player-C: America<br />
+Player-D: Amsterdam<br />
+Player-E: Mumbai<br />
+Player-A: Italy<br />
+Player-B: Yemen<br />
+Player-C: Nagasaki<br />
+Player-D: Italy?<br />
+Everyone: "No, Its already taken by Player A"<br /><br /> 
+Player D: Indonesia<br />
+Player-E: Andhra Pradesh<br />
+Player-A: Himachal Pradesh<br />
+Player-B: Helsinki<br />
+Player-C:..... <br /></p>
+
+<p>Player C eliminated<br />
+Same letter passed to next player<br /></p>
+
+<p>Player-D: India<br />
+Player-E: Africa<br />
+Player-A: Adelaide <br />
+Player-B:... <br /></p>
+
+<p>Playr B eliminated<br />
+Same letter passed to next player.<br /></p>
+
+<p>Player-D: Egypt<br />
+Player-E: Tokyo<br />
+Player-A: Ohio<br />
+Player-D:... <br /></p>
+
+<p>Player D eliminated<br />
+Same letter passed to next player.<br /></p>
+
+<p>Player-E: Osmanabad<br />
+Player-A: Dubai<br />
+Player-E:.... <br /></p>
+
+<p>Player E eliminated<br />
+Player A wins<br /> </p>
+<p >The following Examples should be clear enough to get a rough idea about the working of the game.<br />
+Hope you enjoy :)</p>
+
+<h2 id="django-version-of-the-world-atlas-game-">Django version of the World Atlas game.</h2>
+<p>World Atlas is a geographical word game. You have to enter names of the places in the world according to some rules. It focuses on how much geographically strong you are.</p>
+<p><a href="https://world-atlas-dj.herokuapp.com">World Atlas</a></p>
+<p><a href="https://github.com/Mr-Destructive/world-atlas-api">World Atlas API</a></p>
+<p><a href="https://github.com/Mr-Destructive/WorldAtlas">Vanilla Js game</a></p>
+</div>
+	{% endblock %}
+</body>
+</html>

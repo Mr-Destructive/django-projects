@@ -1,0 +1,7 @@
+{% extends "world-atlas/index.html" %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/play/style.css" %}" >
+<a href="{% url 'world-atlas-bot' %}" id="botbutton">Bot</a>
+{% endblock %}

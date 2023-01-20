@@ -1,4 +1,5 @@
 import random
+from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
@@ -30,3 +31,11 @@ class PlaceViewSet(ModelViewSet):
         else:
             return JsonResponse({"result": False})
 
+def world_atlas_play(request):
+    return render(request,'world-atlas/play/index.html')
+
+def world_atlas(request):
+    return render(request,'world-atlas/index.html')
+
+def world_atlas_bot(request):
+    return render(request,'world-atlas/play/bot.html')
