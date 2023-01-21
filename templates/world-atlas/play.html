@@ -4,4 +4,8 @@
 {% load static %}
 <link rel="stylesheet" href="{% static "css/play/style.css" %}" >
 <a href="{% url 'world-atlas-bot' %}" id="botbutton">Bot</a>
+
+<p>Multiplayer Rooms</p>
+<a href="{% url 'world-atlas-room-create' %}" >Create Room</a>
+<a href="{% url 'world-atlas-room-join' %}" >Join Room</a>
 {% endblock %}

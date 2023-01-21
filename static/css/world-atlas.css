@@ -31,7 +31,7 @@ ul{
 	text-align:center;
 	overflow:hidden;
 	background-color:#00dd00;
-	position:relative;
+	/*position:relative;*/
 	left:27%;
 } 
 nav li:hover{

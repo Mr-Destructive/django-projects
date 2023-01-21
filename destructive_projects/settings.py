@@ -8,9 +8,10 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangonaut.pythonanywhere.com', "127.0.0.1",]
+ALLOWED_HOSTS = ['djangonaut.pythonanywhere.com', "127.0.0.1", "localhost",]
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,8 +54,19 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'destructive_projects.asgi.application'
 WSGI_APPLICATION = 'destructive_projects.wsgi.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        #"BACKEND": "channels.layers.InMemoryChannelLayer",
+        #"BACKEND": "asgiref.inmemory.ChannelLayer",
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        }
+    }
+}
 
 DATABASES = {
     'default': {
@@ -91,19 +103,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
-
 STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# default static files settings for PythonAnywhere.
-# see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 MEDIA_ROOT = 'media'
 MEDIA_URL = 'media/'
 STATICFILES_DIRS = [str(BASE_DIR/ "static")]

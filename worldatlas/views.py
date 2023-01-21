@@ -1,9 +1,10 @@
 import random
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.urls import reverse
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
-from .models import Places
+from .models import Places, Room
 from .serializers import PlaceSerializer
 
 class PlaceViewSet(ModelViewSet):
@@ -32,10 +33,31 @@ class PlaceViewSet(ModelViewSet):
             return JsonResponse({"result": False})
 
 def world_atlas_play(request):
-    return render(request,'world-atlas/play/index.html')
+    return render(request,'world-atlas/play.html')
 
 def world_atlas(request):
     return render(request,'world-atlas/index.html')
 
 def world_atlas_bot(request):
-    return render(request,'world-atlas/play/bot.html')
+    return render(request,'world-atlas/bot.html')
+
+def world_atlas_room(request, name):
+    slug = Room.objects.get(name=name).slug
+    return render(request, 'world-atlas/room.html', {'name': name, 'slug': slug})
+
+def world_atlas_room_create(request):
+    #create a room
+    if request.method == "POST":
+        room_name = request.POST["room_name"]
+        Room.objects.create(name=room_name, slug=room_name)
+        slug = Room.objects.get(name=room_name).slug
+        return redirect(reverse('world-atlas-room', kwargs={'name': room_name}))
+    else:
+        return render(request, 'world-atlas/user-room.html')
+
+def world_atlas_room_join(request):
+    if request.method == "POST":
+        room_name = request.POST["room_name"]
+        return redirect(reverse('world-atlas-room', kwargs={'name': room_name}))
+    else:
+        return render(request, 'world-atlas/user-join.html')
