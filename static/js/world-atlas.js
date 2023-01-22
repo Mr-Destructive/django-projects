@@ -70,7 +70,7 @@ observer.observe(coms, {characterData: false, childList: true, attributes: false
 
 function scroller(){
 	let scrop = document.getElementById('tab');
-	scrop.scrollTop =scrop.scrollHeight;
+	scrop.scrollTop = scrop.scrollHeight;
 }
 
 function toss()

@@ -13,27 +13,24 @@ h1, h2 {
 }
 
 nav{ 
-	display:block;
-	justify-content:center;
 }
 ul{
 	list-style-type:none;
 }
+/*
 .navlinks{
 	display:block;
 	list-style-type:none;
-	padding:7px;
-	height:40px;
-	width:20%;
+	width:10%;
+    height: auto;
 	padding-left:0pt;
-	font-size:250%;
+	font-size:150%;
 	float:left;
 	text-align:center;
 	overflow:hidden;
 	background-color:#00dd00;
-	/*position:relative;*/
-	left:27%;
 } 
+*/
 nav li:hover{
 	background-color:#0014ff;
 	color:#00dd00;

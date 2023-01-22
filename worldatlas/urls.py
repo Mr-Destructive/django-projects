@@ -1,5 +1,6 @@
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.contrib.auth import views as auth_views
 from rest_framework import routers
 from . import views
 
@@ -15,4 +16,7 @@ urlpatterns = [
         path("room/wa/<str:name>/", views.world_atlas_room, name='world-atlas-room'),
         path("room/create/", views.world_atlas_room_create, name='world-atlas-room-create'),
         path("room/join/", views.world_atlas_room_join, name='world-atlas-room-join'),
+        path("login/", views.WA_LoginView.as_view(template_name="world-atlas/login.html"), name='wa-login'),
+        path("signup/", views.register, name='wa-signup'),
+        path("logout/", auth_views.LogoutView.as_view(template_name='world-atlas/logout.html'), name='wa-logout'),
 ]

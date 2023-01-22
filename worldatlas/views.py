@@ -1,9 +1,13 @@
 import random
+from django.contrib import messages
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.urls import reverse
 from rest_framework.decorators import action
 from rest_framework.viewsets import ModelViewSet
+
+from user.forms import UserRegisterForm
 from .models import Places, Room
 from .serializers import PlaceSerializer
 
@@ -61,3 +65,20 @@ def world_atlas_room_join(request):
         return redirect(reverse('world-atlas-room', kwargs={'name': room_name}))
     else:
         return render(request, 'world-atlas/user-join.html')
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {username}')
+            return redirect('wa-login')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'world-atlas/register.html', {'form': form})
+
+
+class WA_LoginView(LoginView):
+    def get_default_redirect_url(self):
+        return reverse('world-atlas')

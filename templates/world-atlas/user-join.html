@@ -3,9 +3,9 @@
     {% load static %}
     <form method='post' action='{% url 'world-atlas-room-join' %}'>
         {% csrf_token %}
-        <input name='username' id='username' placeholder='User Name'>
+        <!--<input name='username' id='username' placeholder='User Name'>
+        <input name='msg', id='msg' placeholder='Message'>-->
         <input name='room_name' id='room_name' placeholder='Room Name'>
-        <input name='msg', id='msg' placeholder='Message'>
         <input type='submit' id="submit">
     </form>
     <div id='chat-text'>

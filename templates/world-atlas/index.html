@@ -5,16 +5,22 @@
 	<title>WORLD ATLAS</title>
 	{% load static %}
 	<link rel="stylesheet" href="{% static "css/world-atlas.css" %}" >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link rel="icon" href="{% static "images/W.png" %}">
-	
 </head>
 <body>
         <h1>WORLD ATLAS</h1>
 	<h2>The geographical game.</h2>
-	<nav>
-	<ul>
-        <li class="navlinks" id="home"><a href="{% url 'world-atlas' %}" >Home</a></li>
-		<li class="navlinks" id="play"><a href="{% url 'world-atlas-play' %}" >Play</a></li>
+	<nav class="flex justify-center">
+	<ul class="bg-[#00dd00] flex justify-center md:justify-between md:items-center md:px-4 md:py-3">
+        <li class="navlinks mr-6 green" id="home"><a href="{% url 'world-atlas' %}" >Home</a></li>
+		<li class="navlinks mr-6 green" id="play"><a href="{% url 'world-atlas-play' %}" >Play</a></li>
+       {% if user.is_authenticated %}
+       <li class="navlinks " id="logout"><a href="{% url 'wa-logout' %}" >Log Out</a></li>
+        {% else %}
+            <li class="navlinks " id="login"><a href="{% url 'wa-login' %}" >Login</a></li>
+        {% endif %}
 	</ul>
 	</nav>
 	{% block body %}
