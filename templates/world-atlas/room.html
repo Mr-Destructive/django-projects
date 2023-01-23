@@ -28,7 +28,7 @@
         const roomName = JSON.parse(document.getElementById('room_name').textContent);
         const userName = JSON.parse(document.getElementById('username').textContent);
 
-        const socket = new WebSocket(`ws://${window.location.host}/ws/${roomName}/`);
+        const socket = new WebSocket(`wss://${window.location.host}/ws/${roomName}/`);
 
         socket.addEventListener('open', (event) => {
                 const chat_th = document.querySelector('#chat-th')

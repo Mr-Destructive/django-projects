@@ -8,7 +8,8 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangonaut.pythonanywhere.com', "127.0.0.1", "localhost",]
+ALLOWED_HOSTS = ['djangonaut.pythonanywhere.com', "django-projects-production.up.railway.app", "127.0.0.1", "localhost",]
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app','http://*.127.0.0.1']
 
 INSTALLED_APPS = [
     'channels',
