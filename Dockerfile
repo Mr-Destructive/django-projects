@@ -9,4 +9,4 @@ EXPOSE 8000
 
 RUN apt-get update && apt-get install -y redis-server
 
-CMD ["sh", "-c", "redis-server & python manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "redis-server & daphne destructive_projects.asgi:application"]

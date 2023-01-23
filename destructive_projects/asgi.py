@@ -1,6 +1,4 @@
 import os
-import django
-django.setup()
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'destructive_projects.settings')
 from django.urls import re_path
 from django.core.asgi import get_asgi_application
