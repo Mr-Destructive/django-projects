@@ -27,6 +27,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     async def disconnect(self, close_code):
         room_name = self.scope['url_route']['kwargs']['room_name']
+        await self.delete_room(room_name)
         await self.channel_layer.group_discard(
             self.room_group_name,
             self.channel_name
@@ -62,7 +63,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     @sync_to_async
     def delete_room(self, room):
-        room = Room.objects.get(name=room)
+        room = Room.objects.get(slug=room)
         room.delete()
 
     @sync_to_async

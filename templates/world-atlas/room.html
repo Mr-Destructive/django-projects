@@ -18,7 +18,7 @@
 </table>
 </div>
 
-    {{ name|json_script:"room_name" }}
+    {{ slug|json_script:"room_name" }}
     {{ request.user.username|json_script:"username" }}
     <script>
         let round_places = []
@@ -97,6 +97,7 @@
                 .then(function (response)
                 {
                     is_valid = response.data["result"];
+                    console.log(is_valid);
                     let index = round_places.length;
                     while (index--) {
                         if (data.message == round_places[index]){
@@ -106,6 +107,14 @@
                     if( is_valid && !round_repeated){
                         round_places.push(data.message);
                     } else {
+                        let p2 = document.querySelector("#chat-th").lastChild.innerText;
+                        socket.send(JSON.stringify({
+                            'message': p2 + " Won!",
+                            'username': userName,
+                            'room': roomName,
+                        }))
+                        console.log("GAME OVER");
+                        socket.close();
                     }
                 })
 
