@@ -9,4 +9,4 @@ EXPOSE 8000
 
 RUN apt-get update && apt-get install -y redis-server
 
-CMD ["sh", "-c", "redis-server & daphne destructive_projects.asgi:application"]
+CMD ["sh", "-c", "redis-server & daphne destructive_projects.asgi:application -b 0.0.0.0"]
