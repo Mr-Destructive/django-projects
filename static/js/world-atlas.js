@@ -7,12 +7,12 @@ let pointdiv = document.querySelector(".points");
 let info = document.querySelector("#info");
 let placeinp = document.querySelector("#place");
 let start = document.getElementById("start");
-let submit = document.getElementById("submit");
+let send = document.getElementById("send");
 let botlast;
 placeinp.disabled=true;
-submit.disabled=true;
+send.disabled=true;
 
-document.getElementById("submit").addEventListener("click",()=>{
+document.getElementById("send").addEventListener("click",()=>{
 
     placeinp.disabled=true;
     plyplace= placeinp.value;	
@@ -38,7 +38,7 @@ document.getElementById("submit").addEventListener("click",()=>{
         plylast = getLast(plyplace);
         botplace = givePlace(plylast);
         botlast = getLast(botplace);
-        submit.disabled=false;
+        send.disabled=false;
     })
     }
 });
@@ -46,7 +46,7 @@ document.getElementById("submit").addEventListener("click",()=>{
 document.getElementById("place").addEventListener("keyup",function(event){
 	if(event.keyCode === 13){
 		event.preventDefault();
-		document.getElementById("submit").click();
+		document.getElementById("send").click();
 	}});
 document.querySelector(".closebtn").addEventListener("click", () => {
     document.querySelector(".alert").style.display="none";
@@ -117,7 +117,7 @@ function play(toss)
         info.innerHTML='You will enter the place first';
         placeinp.disabled=false;
     }
-    submit.disabled=false;
+    send.disabled=false;
 }
 
 // gets last character of the given place
@@ -246,7 +246,7 @@ function validate(place, _callback)
         valid=true;
         add_to_list(place);
         placeinp.disabled=false;
-        submit.disabled=false;
+        send.disabled=false;
         placeinp.focus();
         points+=1;
         pointdiv.innerHTML = "Points : " + points;
@@ -255,7 +255,7 @@ function validate(place, _callback)
     else{
         valid=false;
         placeinp.disabled=true;
-        submit.disabled=true;
+        send.disabled=true;
         win.innerHTML="You Lost";
         win.style.backgroundColor="#ff4436";
         win.style.visibility="visible";
