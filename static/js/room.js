@@ -60,7 +60,7 @@ socket.onmessage = event => {
             row.appendChild(tdata);
             table.appendChild(row);
         }
-        let url = `http://${window.location.host}/world-atlas/api/places/exists/data.message`;
+        let url = `http://${window.location.host}/world-atlas/api/places/exists/${data.message}`;
         axios.get(url)
         .then(function (response)
         {
