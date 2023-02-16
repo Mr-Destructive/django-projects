@@ -130,7 +130,8 @@ function getLast(place)
 // random place generator for bot
 function givePlace(letter)
 {
-    let url = `${window.location.host}/world-atlas/api/places/get/${letter}/`;
+    let url = `/world-atlas/api/places/get/${letter}/`;
+    console.log(url);
     axios.get(url) 
     .then(function (response)
     {
@@ -163,6 +164,7 @@ function validate(place, _callback)
     let placelist = [];
     let exists = 0, repeated = 0, count = 0, last=0;
     let url = `${window.location.host}/world-atlas/api/places/exists/${place}`;
+    console.log(url);
     _callback(axios.get(url) 
     .then(function (response)
     {
